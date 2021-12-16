@@ -29,6 +29,22 @@ describe('getProducts', () => {
         inStock: 5,
         image: 'https://fsdkjfghskdfjghs.se',
       },
+      {
+        id: 'ajgfgsjsd',
+        name: 'Innebandyklubba',
+        details: 'Den bästa klubban för dig och ditt bandylag',
+        price: 1500,
+        inStock: 3,
+        image: 'https://ghs.se',
+      },
+      {
+        id: '12343dsa',
+        name: 'Pingisrack',
+        details: 'Ska du bli bäst på pingis? Då är detta racket för dig.',
+        price: 150,
+        inStock: 8,
+        image: 'https://dfsdfdjghs.se',
+      },
     ]);
   });
 
