@@ -1,0 +1,2 @@
+const { getProducts } = require('./APIfunctions');
+

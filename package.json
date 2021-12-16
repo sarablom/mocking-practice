@@ -1,0 +1,25 @@
+{
+  "name": "testuppgift-mocking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "APIFunctions.test.js",
+  "scripts": {
+    "test": "jest",
+    "test-watch": "jest --watchAll",
+    "test-coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarablom/mocking-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarablom/mocking-practice/issues"
+  },
+  "homepage": "https://github.com/sarablom/mocking-practice#readme",
+  "dependencies": {
+    "jest": "^27.4.5",
+    "supertest": "^6.1.6"
+  }
+}
