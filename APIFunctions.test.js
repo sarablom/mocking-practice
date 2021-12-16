@@ -1,5 +1,6 @@
 const { beforeEach } = require('@jest/globals');
 const { getProducts } = require('./APIfunctions');
+const products = require('./productData');
 
 describe('getProducts', () => {
   let databaseMock;
@@ -49,12 +50,25 @@ describe('getProducts', () => {
   });
 
   it('returns a list of products that match the name', () => {
-    const testSearchString = 'fotboll';
+    const testSearchString = 'Fotboll';
+    let mockDb = databaseMock;
 
-    // it returns product even with small or big letter
-    // it returns product even with white space
-    // it returns false/message if no matching product
-    // it returns false if invalid search-string
-    // it returns message if product out of stock
+    const filterdResult = getProducts(testSearchString, mockDb);
+    console.log(typeof mockDb);
+
+    expect(filterdResult).toBe({
+      id: '1hjjh2h2',
+      name: 'Fotboll',
+      details: 'En boll man kan sparka på',
+      price: 120,
+      inStock: 20,
+      image: 'https://jkashdkasjdja.jpg',
+    });
   });
+
+  // it returns product even with small or big letter
+  // it returns product even with white space
+  // it returns false/message if no matching product
+  // it returns false if invalid search-string
+  // it returns message if product out of stock
 });

@@ -7,9 +7,13 @@
 //     image?: string;   // bild-URL, valfri
 // }
 
-
 //: Product[]  // returnerar lista med produkter vars namn matchar
-function getProducts(filter) {}
+function getProducts(filter, mockDB) {
+  //   const filterdProducts = mockDB.filter((product) =>
+  //     product.name.includes(filter)
+  //   );
+  //   return filterdProducts;
+}
 
 // //: Product  // returnerar en produkt med ett visst id
 // function getProductById(id) {}
@@ -22,7 +26,6 @@ function getProducts(filter) {}
 
 // // ändrar en produkt genom att byta ut den
 // function modifyProduct(id, updatedProduct) {}
-
 
 // // tar bort en produkt från lagret
 // function deleteProduct(id) {}
