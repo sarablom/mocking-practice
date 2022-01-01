@@ -1,3 +1,5 @@
+const collection = require("./collection");
+
 // Product {
 //     id: string;
 //     name: string;
@@ -7,12 +9,22 @@
 //     image?: string;   // bild-URL, valfri
 // }
 
-
 //: Product[]  // returnerar lista med produkter vars namn matchar
-function getProducts(filter) {}
+async function getProducts(filterText) {
+	try {
+		console.log(filterText);
+		const products = await collection("products").filter(filterText);
+		return products;
+	} catch (exception) {
+		console.log(exception);
+	}
+}
 
 // //: Product  // returnerar en produkt med ett visst id
-// function getProductById(id) {}
+async function getProductById(id) {
+	const product = await collection("products").getById(1);
+	return product;
+}
 
 // //: void  // drar ifrån 1 av den valda produkten från lagret
 // function buyProduct(id) {}
@@ -23,8 +35,7 @@ function getProducts(filter) {}
 // // ändrar en produkt genom att byta ut den
 // function modifyProduct(id, updatedProduct) {}
 
-
 // // tar bort en produkt från lagret
 // function deleteProduct(id) {}
 
-module.exports = { getProducts };
+module.exports = { getProducts, getProductById };
