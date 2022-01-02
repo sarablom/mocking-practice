@@ -6,12 +6,17 @@
 //     inStock: number;  // antal kvar i lager
 //     image?: string;   // bild-URL, valfri
 // }
-const { collection } = require('./database');
 
 //: Product[]  // returnerar lista med produkter vars namn matchar
-function getProducts(filter) {
-    const products = await collection('products').filter(filter);
-    return products;
+async function getProducts(searchString, mockData) {
+    try {
+        const products = await mockData.filter(data => data.name == searchString);
+        console.log(products);
+        return products;
+    } catch (error) {
+        console.log(error);
+    }
+  
 }
 
 // //: Product  // returnerar en produkt med ett visst id
