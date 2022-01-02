@@ -12,7 +12,7 @@ async function getProducts(searchString, mockData) {
     try {
         const products = await mockData.filter(data => data.name == searchString);
         console.log(products);
-        return products;
+        return products[0].name;
     } catch (error) {
         console.log(error);
     }

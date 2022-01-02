@@ -1,12 +1,26 @@
-
- 
-      {
-        "id": "1hjjh2h2",
-        "name": "Fotboll",
-        "details": "En boll man kan sparka på",
-        "price": 120,
-        "inStock": 20,
-        "image": "https://jkashdkasjdja.jpg"
-      }
-    
-  
+[
+  {
+    "id": "1hjjh2h2",
+    "name": "Fotboll",
+    "details": "En boll man kan sparka på",
+    "price": 120,
+    "inStock": 20,
+    "image": "https://jkashdkasjdja.jpg"
+  },
+	{
+		"id": "2",
+		"name": "Basketboll",
+		"details": "En boll att kasta i en korg",
+		"price": 310,
+		"inStock": 15,
+		"image": "https://hjkdfksjdf.se"
+	},
+	{
+		"id": "3",
+		"name": "Krocketspel",
+		"details": "Ett härligt spel att spela på sommaren",
+		"price": 200,
+		"inStock": 5,
+		"image": "https://fsdkjfghskdfjghs.se"
+	}
+]
