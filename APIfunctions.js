@@ -10,10 +10,11 @@ const collection = require("./collection");
 // }
 
 //: Product[]  // returnerar lista med produkter vars namn matchar
-async function getProducts(filterText) {
+async function getProducts(filterString) {
 	try {
-		console.log(filterText);
-		const products = await collection("products").filter(filterText);
+		const products = await collection("products").filter(
+			filterString.trim().toLowerCase()
+		);
 		return products;
 	} catch (exception) {
 		console.log(exception);

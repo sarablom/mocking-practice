@@ -43,9 +43,9 @@ const products = [
 
 module.exports = () => ({
 	getById: () => "mock result",
-	filter: (filterString) => {
+	filter: jest.fn((filterString) => {
 		return products.filter((product) => {
-			return product.name.includes(filterString);
+			return product.name.toLowerCase().includes(filterString.toLowerCase());
 		});
-	},
+	}),
 });
