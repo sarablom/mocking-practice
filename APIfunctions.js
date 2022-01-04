@@ -11,12 +11,18 @@
 async function getProducts(searchString, mockData) {
     try {
         const products = await mockData.filter(data => data.name == searchString);
-        console.log(products);
-        return products[0].name;
-    } catch (error) {
-        console.log(error);
+
+        if(products.length >= 1) {
+            console.log('i if');
+            return true;
+        } else if (products.length === 0) {
+            return false;
+        }   
+        
+    } catch (err) {
+        throw new Error("Failed to perform search");
     }
-  
+
 }
 
 // //: Product  // returnerar en produkt med ett visst id

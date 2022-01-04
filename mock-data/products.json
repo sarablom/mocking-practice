@@ -22,5 +22,13 @@
 		"price": 200,
 		"inStock": 5,
 		"image": "https://fsdkjfghskdfjghs.se"
-	}
+	},
+  {
+    "id": "4",
+    "name": "Fotboll",
+    "details": "En boll man kan sparka på som är jättestor",
+    "price": 220,
+    "inStock": 10,
+    "image": "https://jkaskasjdja.jpg"
+  }
 ]
