@@ -13,16 +13,16 @@ async function getProducts(searchString, mockData) {
         const products = await mockData.filter(data => data.name == searchString);
 
         if(products.length >= 1) {
-            console.log('i if');
             return true;
         } else if (products.length === 0) {
             return false;
-        }   
-        
+        } else if (products[0].inStock === 0) {
+            return "Product out of stock";
+        }  
+
     } catch (err) {
         throw new Error("Failed to perform search");
     }
-
 }
 
 // //: Product  // returnerar en produkt med ett visst id

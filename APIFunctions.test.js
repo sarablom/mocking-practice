@@ -22,15 +22,14 @@ describe("getProducts", () => {
   it("returns false/message if no matching product", async () => {
     const testSeachString = "Banana";
     const filterResult = await getProducts(testSeachString, products);
-    const errorMessage = "No search results, try another product";
 
-    expect(filterResult).toBe(false)
-
+    expect(filterResult).toBe(false);
   }) 
 
+
+
   // it returns product even with small or big letter
-  // it returns product even with white space
-  
+  // it returns product even with white space 
   // it returns false if invalid search-string
   // it returns message if product out of stock
 });
