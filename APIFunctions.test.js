@@ -1,4 +1,4 @@
-const { getProducts } = require("./APIfunctions");
+const { getProducts, getProductById } = require("./APIfunctions");
 const collection = require("./database");
 jest.mock("./database");
 
@@ -93,5 +93,23 @@ describe("getProducts", () => {
 			"searchString must be a string"
 		);
 	});
+});
 
+describe("getProductById function", () => {
+	it("returns the product object that matches the id", async () => {
+		const id = "a1243arte";
+
+		const expectedResult = {
+			id: "a1243arte",
+			name: "Basketboll",
+			details: "En boll att kasta i en korg",
+			price: 310,
+			inStock: 15,
+			image: "https://hjkdfksjdf.se",
+		};
+
+		const actualResult = await getProductById(id);
+
+		expect(actualResult).toStrictEqual(expectedResult);
+	});
 });

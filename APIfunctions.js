@@ -22,7 +22,10 @@ async function getProducts(searchString) {
 }
 
 // //: Product  // returnerar en produkt med ett visst id
-// function getProductById(id) {}
+async function getProductById(id) {
+	const product = await collection("products").getById(id);
+	return product;
+}
 
 // //: void  // drar ifrån 1 av den valda produkten från lagret
 // function buyProduct(id) {}
@@ -36,4 +39,4 @@ async function getProducts(searchString) {
 // // tar bort en produkt från lagret
 // function deleteProduct(id) {}
 
-module.exports = { getProducts };
+module.exports = { getProducts, getProductById };
