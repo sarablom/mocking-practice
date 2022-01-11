@@ -1,20 +1,24 @@
-const { collection } = require('./database');
+const { collection } = require("./database");
 
 //: Product[]  // returnerar lista med produkter vars namn matchar
 async function getProducts(searchString) {
-  try {
-    const products = await collection('products').filter(
-      searchString.toLowerCase().trim()
-    );
+	try {
+		if (typeof searchString !== "string") {
+			throw new Error("searchString must be a string");
+		}
 
-    if (products.length === 0) {
-      return undefined;
-    }
+		const products = await collection("products").filter(
+			searchString.toLowerCase().trim()
+		);
 
-    return products;
-  } catch (error) {
-    console.log(error);
-  }
+		if (products.length === 0) {
+			return undefined;
+		}
+
+		return products;
+	} catch (error) {
+		throw new Error(error);
+	}
 }
 
 // //: Product  // returnerar en produkt med ett visst id
