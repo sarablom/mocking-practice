@@ -1,5 +1,4 @@
-const { getProducts, getProductById } = require("./APIfunctions");
-const collection = require("./database");
+const { getProducts, getProductById, buyProduct } = require("./APIfunctions");
 jest.mock("./database");
 
 describe("getProducts", () => {
@@ -112,4 +111,42 @@ describe("getProductById function", () => {
 
 		expect(actualResult).toStrictEqual(expectedResult);
 	});
+
+  it('returns undefined if no object matches the id', async () => {
+    const id = 'lllll';
+    const expectedResult = undefined;
+
+    const actualResult = await getProductById(id);
+
+    expect(actualResult).toBe(expectedResult);
+  })
+
+  it('throws an error if id is not of type string', async () => {
+    const id = null;
+
+    await expect(getProductById(id)).rejects.toThrow(
+			"id must be a string"
+		);    
+  })
 });
+
+describe('buyProducts', () => {
+  it('decreases the stock value by one when someone buys a product', async () => {
+    const id = '1hjjh2h2';
+
+    const expectedResult = {
+      id: "1hjjh2h2",
+      name: "Fotboll",
+      details: "En boll man kan sparka på",
+      price: 120,
+      inStock: 19,
+      image: "https://jkashdkasjdja.jpg",
+    }
+
+    const actualResult = await buyProduct(id);
+
+    expect(actualResult).toStrictEqual(expectedResult);
+  })
+
+  // it returns undefined if no object matches the id
+})

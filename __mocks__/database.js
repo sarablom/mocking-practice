@@ -52,8 +52,21 @@ const collection = (db) => {
 			getById: (id) => {
 				return products.find((product) => product.id === id);
 			},
+      updateById: (id, newObject) => {
+        const index = products.findIndex((product) => product.id === id);
+        products[index] = newObject;
+        return products[index];
+      },
+      add: (newObject) => {
+        return products.push(newObject);
+      }
 		};
 	}
 };
+
+// add(newObject)  // lägger till nytt objekt
+// updateById(id, newObject)  // ersätter objekt
+// deleteById(id)  // tar bort objekt
+
 
 module.exports = { collection };
