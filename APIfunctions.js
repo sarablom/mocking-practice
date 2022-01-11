@@ -1,9 +1,20 @@
-const { collection } = require("./database");
+const { collection } = require('./database');
 
 //: Product[]  // returnerar lista med produkter vars namn matchar
 async function getProducts(searchString) {
-    const products = await collection('products').filter(searchString.toLowerCase());
+  try {
+    const products = await collection('products').filter(
+      searchString.toLowerCase().trim()
+    );
+
+    if (products.length === 0) {
+      return undefined;
+    }
+
     return products;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 // //: Product  // returnerar en produkt med ett visst id
