@@ -3,6 +3,7 @@ const {
 	getProductById,
 	buyProduct,
 	addProduct,
+  modifyProduct
 } = require("./APIfunctions");
 jest.mock("./database");
 
@@ -294,3 +295,21 @@ describe("function addProduct", () => {
 		);
 	});
 });
+
+describe('function modifyProduct', () => {
+  it('can modify product', async () => {
+    const id = "a1243arte";
+    const newProduct = {
+      id: "a1243arte",
+      name: "Basketboll",
+      details: "En boll att kasta i en korg och dribbla med",
+      price: 510,
+      inStock: 75,
+      image: "https://hjkdfksjdf.se",
+    }
+
+    const actualResult = await modifyProduct(id, newProduct);
+
+    expect(actualResult).toStrictEqual(newProduct);
+  })
+})

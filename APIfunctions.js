@@ -86,10 +86,14 @@ async function addProduct(newProduct) {
 	}
 }
 
-// // ändrar en produkt genom att byta ut den
-// function modifyProduct(id, updatedProduct) {}
+// ändrar en produkt genom att byta ut den
+async function modifyProduct(id, updatedProduct) {
+    const product = await collection('products').getById(id);
+    const newProduct = {...product, ...updatedProduct}
+    return newProduct;
+}
 
 // // tar bort en produkt från lagret
 // function deleteProduct(id) {}
 
-module.exports = { getProducts, getProductById, buyProduct, addProduct };
+module.exports = { getProducts, getProductById, buyProduct, addProduct, modifyProduct };
