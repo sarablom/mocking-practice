@@ -11,9 +11,8 @@
 async function getProducts(searchString, mockData) {
     try {
         const products = await mockData.filter(data => data.name == searchString);
-
         if(products.length >= 1) {
-            return true;
+            return products;
         } else if (products.length === 0) {
             return false;
         } else if (products[0].inStock === 0) {

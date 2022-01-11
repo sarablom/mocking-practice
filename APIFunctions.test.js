@@ -16,7 +16,7 @@ describe("getProducts", () => {
 
     const filterdResult = await getProducts(testSearchString, products);
 
-    expect(filterdResult).toBe(true);
+    expect(filterdResult).toStrictEqual([{"details": "En boll man kan sparka på", "id": "1hjjh2h2", "image": "https://jkashdkasjdja.jpg", "inStock": 20, "name": "Fotboll", "price": 120}, {"details": "En boll man kan sparka på som är jättestor", "id": "4", "image": "https://jkaskasjdja.jpg", "inStock": 10, "name": "Fotboll", "price": 220}]);
   });
 
   it("returns false/message if no matching product", async () => {
@@ -25,8 +25,6 @@ describe("getProducts", () => {
 
     expect(filterResult).toBe(false);
   }) 
-
-
 
   // it returns product even with small or big letter
   // it returns product even with white space 
