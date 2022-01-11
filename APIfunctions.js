@@ -7,7 +7,7 @@
 //     image?: string;   // bild-URL, valfri
 // }
 
-//: Product[]  // returnerar lista med produkter vars namn matchar
+// returnerar lista med produkter vars namn matchar
 async function getProducts(searchString, mockData) {
     try {
         const products = await mockData.filter(data => data.name == searchString);
@@ -24,7 +24,7 @@ async function getProducts(searchString, mockData) {
     }
 }
 
-// //: Product  // returnerar en produkt med ett visst id
+// returnerar en produkt med ett visst id
 // function getProductById(id) {}
 
 // //: void  // drar ifrån 1 av den valda produkten från lagret
